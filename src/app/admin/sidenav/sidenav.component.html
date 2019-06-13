@@ -1,0 +1,18 @@
+<div class="sidebar d-flex">
+  <div class="service-flex">
+    <ul class="nav nav-tabs">
+      <li class="nav-item" routerLink="/dashboard" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+        <img src="/assets/user-list.png" alt="">
+        Users Management
+      </li>
+      <li class="nav-item" routerLink="/dashboard/employee-management" routerLinkActive="active">
+        <img src="/assets/message.png" alt="">
+        Send Message
+      </li>           
+    </ul>
+  </div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</div>

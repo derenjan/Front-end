@@ -4,10 +4,11 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {JwtModule} from '@auth0/angular-jwt';
 import {environment} from '../environments/environment';
+import { CheckUserInterseptor } from './shared/interseptors/check-user.interseptor';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -32,7 +33,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: CheckUserInterseptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule {
