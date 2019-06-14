@@ -8,12 +8,30 @@ import {AdminService} from "../admin.service"
 })
 export class UsersManagmentComponent implements OnInit {
   users:any;
+  display:Boolean=false;
+  user
   constructor(private as:AdminService) { }
 
   ngOnInit() {
-    this.as.getUserslist().subscribe((data)=>{
+    this.getUsers()   
+  }
+  delReq(usr){
+    console.log(usr)
+    this.user=usr
+    this.display=true
+  }
+  getUsers(){
+   let sub= this.as.getUserslist().subscribe((data)=>{
       this.users=data
       console.log(data)
+      sub.unsubscribe()
+    })
+  }
+  deleteUser(id){
+    this.as.deleteUser(id).subscribe((res)=>{
+      this.display=false;
+      this.getUsers();
+    
     })
   }
 

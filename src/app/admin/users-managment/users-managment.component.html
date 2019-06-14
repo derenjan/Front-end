@@ -9,6 +9,7 @@
       <th>Phone Number</th> 
       <th>Mail</th> 
       <th>Stations</th> 
+      <th></th>
     </tr>
     </thead>
     <tbody>
@@ -18,13 +19,25 @@
       <td>{{el.phone}}</td>
       <td>{{el.email}}</td>
       <td ><select class="stationList"><option *ngFor="let station of el.stations">{{station}}</option></select></td>
-      <td class="function">
-        <img src="/assets/edit.png" alt="" >
-        <img src="/assets/rubbish-bin.png" alt="" >
+      <td class="function">        
+        <img src="/assets/rubbish-bin.png" alt="" (click)="delReq(el._id)" >
       </td>
     </tr>
     </tbody>
   </table>
+
+
+  <p-dialog [(visible)]="display">
+      <p-header>
+          Delete
+      </p-header>  
+      <ng-container >Are you sure want to delete user?</ng-container >   
+      <p-footer>
+          <button class="btn btn-danger" (click)="display = false">Cancel</button>
+          <button class="btn btn-success" (click)="deleteUser(user)" >Delete</button>
+        </p-footer>
+      
+    </p-dialog>
 
 </div>
 

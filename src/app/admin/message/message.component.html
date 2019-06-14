@@ -35,4 +35,6 @@
 <input type="email" [(ngModel)]="mail" class="mail" placeholder="Write Email" >
 <button pButton type="button" label="Send Message" class="sendButton" (click)='sendMessage()'></button> 
 
+<p-messages [(value)]="msgs" [closable]="true"></p-messages>
+
 </div>

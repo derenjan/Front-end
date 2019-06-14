@@ -14,5 +14,8 @@ export class AdminService {
     sendMesage(data){
       return this.http.post(`${environment.apiUrl}/api/admin/users/email`,data)
     }
+    deleteUser(id){
+      return this.http.delete(`${environment.apiUrl}/api/admin/users/${id}`)
+    }
 
 }

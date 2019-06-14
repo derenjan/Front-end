@@ -8,21 +8,26 @@ import {AdminService} from '../admin.service'
 })
 export class MessageComponent implements OnInit {
   text:String;
-  mail:string
-
+  mail:string;
+  msgs=[]
   constructor(
     private as:AdminService
   ) { }
 
   ngOnInit() {
   }
+
   sendMessage(){
     let data={
       email:this.mail,
       mess:this.text
     }
     this.as.sendMesage(data).subscribe((data)=>{
-      console.log(data)
+      this.text="";
+      this.mail=""
+      this.msgs = [];
+      this.msgs.push({severity:'success', summary:'Success', detail:'Mail was sent succesfully'});
+         
     })
   }
 
