@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminService} from '../admin.service'
-import { validate } from 'codelyzer/walkerFactory/walkerFn';
 
 @Component({
   selector: 'app-message',
@@ -12,7 +11,7 @@ export class MessageComponent implements OnInit {
   mail:string;
   msgs=[]
   constructor(
-    private as:AdminService
+    private as:AdminService,    
   ) { }
 
   ngOnInit() {

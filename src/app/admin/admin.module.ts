@@ -14,7 +14,7 @@ import {FormsModule} from '@angular/forms';
 import {DialogModule} from 'primeng/dialog';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
-
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [UsersManagmentComponent, SidenavComponent, HeaderComponent, AdminComponent, MessageComponent],
@@ -26,7 +26,8 @@ import {MessageModule} from 'primeng/message';
     FormsModule,
     DialogModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    ToastModule
 
   ],
   providers:[AdminService]
