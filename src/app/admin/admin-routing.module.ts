@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component'
 import {UsersManagmentComponent} from './users-managment/users-managment.component'
+import { MessageComponent } from './message/message.component'
 const routes: Routes = [
   {
     path:"",
@@ -10,7 +11,17 @@ const routes: Routes = [
       {
         path:"",
         pathMatch:"full",
+        redirectTo:"users management"
+        
+      },
+      {
+        path:"users management",
         component:UsersManagmentComponent,
+
+      },
+      {
+        path:'messages',
+        component:MessageComponent
       }
     ]
   }

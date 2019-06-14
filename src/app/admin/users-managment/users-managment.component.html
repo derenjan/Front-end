@@ -13,12 +13,11 @@
     </thead>
     <tbody>
     <tr *ngFor="let el of users">
-      <td>{{el.first_name}}</td>
-      <td>{{el.last_name}}</td>
+      <td>{{el.firstName}}</td>
+      <td>{{el.lastName}}</td>
       <td>{{el.phone}}</td>
       <td>{{el.email}}</td>
       <td ><select class="stationList"><option *ngFor="let station of el.stations">{{station}}</option></select></td>
-
       <td class="function">
         <img src="/assets/edit.png" alt="" >
         <img src="/assets/rubbish-bin.png" alt="" >

@@ -1,0 +1,23 @@
+.user-list {
+    .head {
+      font-size: 30px;
+      font-family: Comfortaa, serif;
+      font-weight: bold;
+      color: #0042c5;
+      margin-bottom: 14px;
+    };
+    .sendButton{
+        display: block;
+        margin:20px auto
+    };
+    .mail{
+        margin:20px auto;
+        display: block;
+        width:100%;
+        font-size: 20px;
+        padding:10px;
+        border: 1px solid rgb(199, 199, 199);
+        border-radius: 5px;
+        outline:0
+    }
+  }

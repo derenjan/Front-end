@@ -25,9 +25,13 @@ export class AuthGuard implements CanActivateChild, CanActivate {
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.auth.token && !this.helper.isTokenExpired(this.auth.token)) {
-      return true;
-    }
+      const decodedToken = this.helper.decodeToken(this.auth.token);
+      if (this.auth.token && !this.helper.isTokenExpired(this.auth.token)&&!decodedToken.isAdmin) {
+        return true;
+      }
+      else if(this.auth.token && !this.helper.isTokenExpired(this.auth.token)&& decodedToken.isAdmin){
+        return this.router.parseUrl('/admin');
+      }
     return this.router.parseUrl('/auth/login');
   }
 

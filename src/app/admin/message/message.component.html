@@ -1,0 +1,38 @@
+<div class="user-list">
+  <div class="head">Send Message</div>
+  <hr>
+  <p-editor [(ngModel)]="text"  [style]="{'height':'320px'}">      
+    <p-header>
+        <span class="ql-formats">   
+          <select class="ql-header"></select>         
+            <select class="ql-font"></select>            
+        </span>
+        <span class="ql-formats">            
+            <button title="Bold" class="ql-bold"></button>
+            <button title="Italic" class="ql-italic"></button>
+            <button title="Underline" class="ql-underline"></button>
+            <button title="Strikethrough" class="ql-strike"></button>
+        </span>
+        <span class="ql-formats">
+            <select class="ql-color"></select>            
+            <select class="ql-background"></select>            
+        </span>
+        <span class="ql-formats">
+            <button aria-label="Ordered List" value="ordered" class="ql-list"></button>
+            <button aria-label="Unordered List" class="ql-list" value="bullet"></button>
+            <select class="ql-align"></select>
+        </span>
+        <span class="ql-formats">
+            <button aria-label="Insert Link" class="ql-link" type="button"></button>
+            <button aria-label="Insert Code Block" class="ql-code-block"></button>
+        </span>
+        <span class="ql-formats">
+            <button aria-label="Remove Styles" class="ql-clean" type="button"></button>
+            
+        </span>
+    </p-header>    
+</p-editor>
+<input type="email" [(ngModel)]="mail" class="mail" placeholder="Write Email" >
+<button pButton type="button" label="Send Message" class="sendButton" (click)='sendMessage()'></button> 
+
+</div>
