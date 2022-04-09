@@ -26,7 +26,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-auto-unsubscribe": "^3.0.0",
     "ngx-bootstrap": "^4.2.0",
     "ngx-moment": "^3.4.0",
